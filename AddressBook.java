@@ -2,7 +2,7 @@ package Address;
 
 import java.util.Scanner;
 
-/*   UC1-> To create contacts in Address Book
+/*   UC2-> To add new contact to Address Book
  */
 public class AddressBook {
     /*
@@ -10,34 +10,37 @@ public class AddressBook {
      */
     Scanner scanner = new Scanner(System.in);
     /*
-    Object created of Contacts Class
+    Object of addNewContacts Class
      */
     Contacts contacts = new Contacts();
 
-    public void Contacts() {
+    public void addNewContacts() {
+         /*
+          method to add new contacts
+         */
         System.out.println("Enter First Name");
-        contacts.setFirstName(scanner.nextLine());
+        contacts.setFirstName(scanner.next());
         System.out.println("Enter Last Name");
-        contacts.setLastName(scanner.nextLine());
+        contacts.setLastName(scanner.next());
         System.out.println("Enter Email");
-        contacts.setAddress(scanner.nextLine());
+        contacts.setAddress(scanner.next());
         System.out.println("Enter Phone No.");
         contacts.setPhoneNo(scanner.nextLong());
         System.out.println("Enter Zip Code");
         contacts.setZip(scanner.nextInt());
         System.out.println("Enter State Name");
-        contacts.setState(scanner.nextLine());
-        System.out.println("Contacts Created");
+        contacts.setState(scanner.next());
+        System.out.println("Contact Created");
 
     }
 
     public void ShowContacts() {
-        System.out.println("Enter First Name" + contacts.getFirstName());
-        System.out.println("Enter Last Name" + contacts.getLastName());
-        System.out.println("Enter m@il" + contacts.getEmail());
-        System.out.println("Enter Phone No." + contacts.getPhoneNo());
-        System.out.println("Enter Zio Code" + contacts.getZip());
-        System.out.println("Enter State Name" + contacts.getState());
-
+        System.out.println("First Name-" + contacts.getFirstName());
+        System.out.println("Last Name-" + contacts.getLastName());
+        System.out.println("Email-" + contacts.getEmail());
+        System.out.println("Phone No.-" + contacts.getPhoneNo());
+        System.out.println("Zip Code-" + contacts.getZip());
+        System.out.println("State-" + contacts.getState());
+        System.out.println("------------------------------------------------");
     }
 }
