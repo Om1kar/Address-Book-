@@ -3,7 +3,7 @@ package Address;
 import java.util.Scanner;
 
 /*
-UC3-> To edit existing contact
+UC4-> To Delete contact
  */
 public class AddressBook {
     /*
@@ -14,7 +14,6 @@ public class AddressBook {
     Object of addNewContacts Class
      */
     Contacts contacts = new Contacts();
-
     public void addNewContacts() {
          /*
           method to add new contacts
@@ -31,8 +30,8 @@ public class AddressBook {
         contacts.setZip(scanner.nextInt());
         System.out.println("Enter State Name");
         contacts.setState(scanner.next());
+        System.out.println("--------------------------------------------");
     }
-
     public void ShowContacts() {
         System.out.println("First Name-" + contacts.getFirstName());
         System.out.println("Last Name-" + contacts.getLastName());
@@ -42,7 +41,6 @@ public class AddressBook {
         System.out.println("State-" + contacts.getState());
         System.out.println("------------------------------------------------");
     }
-
     public void toEditContact() {
         /*
         to edit contact in address book
@@ -66,6 +64,24 @@ public class AddressBook {
             System.out.println("Enter State Name-");
             scanner.next();
             System.out.println("--------------------------------------------------------");
+        }
+    }
+    public void toDeleteContact(){
+        //Get First Name to Delete the Contact
+        System.out.println("Enter the First Name : ");
+        String firstName = scanner.next();
+
+        //check if the Given User with First Name
+        if(!firstName.equalsIgnoreCase(contacts.getFirstName())) {
+            System.out.println("The Entered Contact Name is Not Available in Address Book");
+        } else {
+            contacts.setFirstName(null);
+            contacts.setLastName(null);
+            contacts.setAddress(null);
+            contacts.setState(null);
+            contacts.setZip(0);
+            contacts.setPhoneNo(0);
+            contacts.setEmail(null);
         }
     }
 }

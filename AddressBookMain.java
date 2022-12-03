@@ -15,7 +15,7 @@ public class AddressBookMain {
          */
         addressBook.addNewContacts();
         System.out.println("Choose Options = ");
-        System.out.println("1]To Add New Contact " + " 2]To show Contact "+" 3]To Edit Contact ");
+        System.out.println("1]To Add New Contact " + " 2]To show Contact "+" 3]To Edit Contact "+" 4]To Delete Contact");
         /*
          scanner object used to take choice input from user
          */
@@ -34,6 +34,9 @@ public class AddressBookMain {
                 addressBook.toEditContact();
                 System.out.println("Contact Updated Successfully");
                 break;
+            case 4:
+                addressBook.toDeleteContact();
+                System.out.println("Contact Deleted Successfully");
             default:
                 System.out.println("Invalid Choice");
         }
