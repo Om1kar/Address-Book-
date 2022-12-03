@@ -2,7 +2,8 @@ package Address;
 
 import java.util.Scanner;
 
-/*   UC2-> To add new contact to Address Book
+/*
+UC3-> To edit existing contact
  */
 public class AddressBook {
     /*
@@ -30,8 +31,6 @@ public class AddressBook {
         contacts.setZip(scanner.nextInt());
         System.out.println("Enter State Name");
         contacts.setState(scanner.next());
-        System.out.println("Contact Created");
-
     }
 
     public void ShowContacts() {
@@ -42,5 +41,31 @@ public class AddressBook {
         System.out.println("Zip Code-" + contacts.getZip());
         System.out.println("State-" + contacts.getState());
         System.out.println("------------------------------------------------");
+    }
+
+    public void toEditContact() {
+        /*
+        to edit contact in address book
+         */
+        System.out.println("Enter First Name");
+        String firstName = scanner.next();
+
+        if (!firstName.equals(contacts.getFirstName())) {
+            System.out.println("Entered Name is Not in Address Book");
+        } else {
+            System.out.println("Enter First Name-");
+            scanner.next();
+            System.out.println("Enter Last Name");
+            scanner.next();
+            System.out.println("Enter E-mail-");
+            scanner.next();
+            System.out.println("Enter Phone No-");
+            scanner.nextLong();
+            System.out.println("Zip Code-");
+            scanner.nextInt();
+            System.out.println("Enter State Name-");
+            scanner.next();
+            System.out.println("--------------------------------------------------------");
+        }
     }
 }

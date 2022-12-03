@@ -15,7 +15,7 @@ public class AddressBookMain {
          */
         addressBook.addNewContacts();
         System.out.println("Choose Options = ");
-        System.out.println("1]To Add New Contact " + " 2]To show Contact");
+        System.out.println("1]To Add New Contact " + " 2]To show Contact "+" 3]To Edit Contact ");
         /*
          scanner object used to take choice input from user
          */
@@ -29,6 +29,10 @@ public class AddressBookMain {
                 break;
             case 2:
                 addressBook.ShowContacts();
+                break;
+            case 3:
+                addressBook.toEditContact();
+                System.out.println("Contact Updated Successfully");
                 break;
             default:
                 System.out.println("Invalid Choice");
