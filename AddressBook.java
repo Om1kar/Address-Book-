@@ -1,5 +1,6 @@
 package Address;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -14,10 +15,14 @@ public class AddressBook {
     Object of addNewContacts Class
      */
     Contacts contacts = new Contacts();
+    ArrayList<Contacts> list = new ArrayList<>();
+
     public void addNewContacts() {
          /*
           method to add new contacts
          */
+        Contacts contacts = new Contacts();
+        System.out.println("Enter Contact Details");
         System.out.println("Enter First Name");
         contacts.setFirstName(scanner.next());
         System.out.println("Enter Last Name");
@@ -31,7 +36,9 @@ public class AddressBook {
         System.out.println("Enter State Name");
         contacts.setState(scanner.next());
         System.out.println("--------------------------------------------");
+        list.add(contacts);
     }
+
     public void ShowContacts() {
         System.out.println("First Name-" + contacts.getFirstName());
         System.out.println("Last Name-" + contacts.getLastName());
@@ -41,6 +48,7 @@ public class AddressBook {
         System.out.println("State-" + contacts.getState());
         System.out.println("------------------------------------------------");
     }
+
     public void toEditContact() {
         /*
         to edit contact in address book
@@ -50,7 +58,6 @@ public class AddressBook {
 
         if (!firstName.equals(contacts.getFirstName())) {
             System.out.println("Entered Name is Not in Address Book");
-        } else {
             System.out.println("Enter First Name-");
             scanner.next();
             System.out.println("Enter Last Name");
@@ -64,24 +71,23 @@ public class AddressBook {
             System.out.println("Enter State Name-");
             scanner.next();
             System.out.println("--------------------------------------------------------");
+            list.add(contacts);
+        } else {
+            System.out.println("Contact Not found");
         }
     }
-    public void toDeleteContact(){
+
+    public void toDeleteContact() {
         //Get First Name to Delete the Contact
         System.out.println("Enter the First Name : ");
         String firstName = scanner.next();
 
         //check if the Given User with First Name
-        if(!firstName.equalsIgnoreCase(contacts.getFirstName())) {
-            System.out.println("The Entered Contact Name is Not Available in Address Book");
+        if (!firstName.equalsIgnoreCase(contacts.getFirstName())) {
+            list.remove(contacts);
+            System.out.println("Contact Deleted SuccessFully");
         } else {
-            contacts.setFirstName(null);
-            contacts.setLastName(null);
-            contacts.setAddress(null);
-            contacts.setState(null);
-            contacts.setZip(0);
-            contacts.setPhoneNo(0);
-            contacts.setEmail(null);
+            System.out.println("Contact Not Found");
         }
     }
 }
