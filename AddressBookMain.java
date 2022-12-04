@@ -37,7 +37,7 @@ public class AddressBookMain {
             case 4:
                 addressBook.toDeleteContact();
                 System.out.println("Contact Deleted Successfully");
-            default:
+                default:
                 System.out.println("Invalid Choice");
         }
     }

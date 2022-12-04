@@ -65,5 +65,5 @@ public class Contacts {
     private int zip;
     private long phoneNo;
     private String email;
-}
 
+}
