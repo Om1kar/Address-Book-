@@ -125,6 +125,9 @@ public class AddressBook {
         }
         return false;
     }
+    public void printSorted() {
+        contactList.stream().sorted((contact1,contact2) -> contact1.firstName.compareTo(contact2.lastName)).forEach(contact -> System.out.println(contact));
+    }
 }
 
 
