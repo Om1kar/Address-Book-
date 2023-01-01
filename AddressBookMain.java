@@ -16,12 +16,6 @@ public class AddressBookMain {
         Object of class Address Book
          */
         AddressBook addressBook = new AddressBook();
-        System.out.println("Choose Options = ");
-        System.out.println("1]To Add New Contact " + " 2]To show Contact "
-                + " 3]To Edit Contact " + " 4]To Delete Contact");
-        /*
-         scanner object used to take option input from user
-         */
         Scanner scanner = new Scanner(System.in);
         option = scanner.nextInt();
 
