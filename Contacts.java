@@ -3,7 +3,6 @@ package Address;
 import java.util.Scanner;
 
 public class Contacts {
-
     public String firstName;
     public String lastName;
     public String address;

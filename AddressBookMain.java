@@ -64,7 +64,8 @@ public class AddressBookMain {
 
     }
     private static void count() {
-
+        System.out.println("count by city : "+cityMap.size());
+        System.out.println("count by state : "+stateMap.size());
     }
     private static void displayByState() {
         addressBookList.stream().forEach((adBook) -> {
