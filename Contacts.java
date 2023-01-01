@@ -31,6 +31,8 @@ public class Contacts {
         this.phoneNo = scanner.nextLong();
         System.out.println("Enter e-m@il-");
         this.email = scanner.nextLine();
+        System.out.println("Enter City");
+        this.city = scanner.nextLine();
 
     }
 
@@ -38,13 +40,14 @@ public class Contacts {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
+        this.city = city;
         this.state = state;
         this.zip = zip;
         this.phoneNo = phoneNo;
         this.email = email;
     }
 
-    public Contacts(String firstName, String lastName, String address, String state, String email, String phoneNo) {
+    public Contacts(String firstName, String lastName, String address,String city, String state, String email, String phoneNo) {
 
     }
 
@@ -58,6 +61,7 @@ public class Contacts {
                 "\ncity='" + zip + '\'' +
                 "\nstate='" + state + '\'' +
                 "\nemail='" + email + '\'' +
+                "\ncity='" + city + '\'' +
                 "\nphoneNo='" + phoneNo + '\'' +
                 '}';
 
