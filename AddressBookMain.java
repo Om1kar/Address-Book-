@@ -51,6 +51,14 @@ public class AddressBookMain {
         }
 
     }
+    private static void search() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the Name of State or City");
+        String searchData = scan.nextLine();
+        for (AddressBook addressBook : addressBookList) {
+            addressBook.contactList.stream().filter(contacts -> contacts.state.equals(searchData)||contacts.city.equals(searchData)).forEach(contacts -> System.out.println(contacts));
+        }
+    }
 
     private static void selectAddressBook() {
         Scanner scanner = new Scanner(System.in);

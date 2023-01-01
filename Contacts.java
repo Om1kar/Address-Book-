@@ -11,6 +11,7 @@ public class Contacts {
     public int zip;
     public long phoneNo;
     public String email;
+    public String city;
 
     Contacts() {
         Scanner scanner = new Scanner(System.in);
