@@ -32,6 +32,22 @@ public class Contacts {
         this.email = scanner.nextLine();
 
     }
+
+    public Contacts(String firstName, String lastName, String address, String state, int zip, long phoneNo, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.state = state;
+        this.zip = zip;
+        this.phoneNo = phoneNo;
+        this.email = email;
+    }
+
+    public Contacts(String firstName, String lastName, String address, String state, String email, String phoneNo) {
+
+    }
+
+
     @Override
     public String toString() {
         return "Contacts{" +

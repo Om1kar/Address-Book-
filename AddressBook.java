@@ -15,7 +15,8 @@ public class AddressBook {
     Object of addNewContacts Class
      */
     Contacts contacts = new Contacts();
-   private static ArrayList<Contacts> contactList = new ArrayList<>();
+    private static ArrayList<Contacts> contactList = new ArrayList<>();
+
     public void toDeleteContact() {
         //Get First Name to Delete the Contact
         System.out.println("Enter the First Name = ");
@@ -28,11 +29,13 @@ public class AddressBook {
             }
         }
     }
+
     public void showContacts() {
-        for (int i =0;i<contactList.size();i++) {
+        for (int i = 0; i < contactList.size(); i++) {
             System.out.println(contactList.get(i));
         }
     }
+
     public void toEditContact() {
         /*
         to edit contact in address book
@@ -88,15 +91,42 @@ public class AddressBook {
     }
 
     public void addNewContacts() {
-         /*
-          method to add new contacts
-         */
-        contactList.add(new Contacts());
+        boolean result = true;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Creating new contacts");
+        System.out.println("Enter the details of contact");
+        String firstName = null;
+        String lastName = null;
+        while (result) {
+            System.out.println("Enter First Name :");
+            firstName = scan.nextLine();
+            System.out.println("Enter Last Name :");
+            lastName = scan.nextLine();
+            result = checkIfAlreadyExists(firstName, lastName);
+        }
+        System.out.println("Enter Address :");
+        String address = scan.nextLine();
+        System.out.println("Enter city :");
+        String city = scan.nextLine();
+        System.out.println("Enter state :");
+        String state = scan.nextLine();
+        System.out.println("Enter e-mail :");
+        String email = scan.nextLine();
+        System.out.println("Enter phone number :");
+        String phoneNo = scan.nextLine();
+        contactList.add(new Contacts(firstName, lastName, address, state, email, phoneNo));
     }
 
-
-
-
-
-
+    private boolean checkIfAlreadyExists(String firstName, String lastName) {
+        for (Contacts contact : contactList) {
+            if (contact.firstName.equals(firstName) && contact.lastName.equals(lastName)) {
+                System.out.println("Contact Already exists");
+                return true;
+            }
+        }
+        return false;
+    }
 }
+
+
+

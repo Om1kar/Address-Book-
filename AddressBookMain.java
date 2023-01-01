@@ -3,7 +3,6 @@ package Address;
 import java.util.*;
 
 public class AddressBookMain {
-    //  private static List<AddressBook>addressBookList = new ArrayList<>();
     private static List<AddressBook> addressBookList = new ArrayList<>();
 
     private static Map<String, AddressBook> map = new HashMap<String, AddressBook>();
