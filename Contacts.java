@@ -1,69 +1,48 @@
 package Address;
 
+import java.util.Scanner;
+
 public class Contacts {
-    public String getFirstName() {
-        return firstName;
+
+    public String firstName;
+    public String lastName;
+    public String address;
+    public String state;
+    public int zip;
+    public long phoneNo;
+    public String email;
+
+    Contacts() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Creating New Contact");
+        System.out.println("Enter Details");
+        System.out.println("Enter First Name-");
+        this.firstName = scanner.nextLine();
+        System.out.println("Enter Last Name");
+        this.lastName = scanner.nextLine();
+        System.out.println("Enter Your Address-");
+        this.address = scanner.nextLine();
+        System.out.println("Enter State-");
+        this.state = scanner.nextLine();
+        System.out.println("Enter Zip Code-");
+        this.zip = scanner.nextInt();
+        System.out.println("Enter Phone Number-");
+        this.phoneNo = scanner.nextLong();
+        System.out.println("Enter e-m@il-");
+        this.email = scanner.nextLine();
+
     }
+    @Override
+    public String toString() {
+        return "Contacts{" +
+                "\nfirstName='" + firstName + '\'' +
+                "\nlastName='" + lastName + '\'' +
+                "\naddress='" + address + '\'' +
+                "\ncity='" + zip + '\'' +
+                "\nstate='" + state + '\'' +
+                "\nemail='" + email + '\'' +
+                "\nphoneNo='" + phoneNo + '\'' +
+                '}';
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
-
-    private String firstName;
-    private String lastName;
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public long getPhoneNo() {
-        return phoneNo;
-    }
-
-    public void setPhoneNo(long phoneNo) {
-        this.phoneNo = phoneNo;
-    }
-
-    public int getZip() {
-        return zip;
-    }
-
-    public void setZip(int zip) {
-        this.zip = zip;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    private String address;
-    private String state;
-    private int zip;
-    private long phoneNo;
-    private String email;
-
 }
