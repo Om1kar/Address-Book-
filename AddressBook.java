@@ -114,7 +114,7 @@ public class AddressBook {
         String email = scan.nextLine();
         System.out.println("Enter phone number :");
         String phoneNo = scan.nextLine();
-        contactList.add(new Contacts(firstName, lastName, address, state, email, phoneNo));
+        contactList.add(new Contacts(firstName, lastName, address,city, state, email, phoneNo));
     }
 
     private boolean checkIfAlreadyExists(String firstName, String lastName) {
