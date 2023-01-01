@@ -116,7 +116,6 @@ public class AddressBook {
         String phoneNo = scan.nextLine();
         contactList.add(new Contacts(firstName, lastName, address,city, state, email, phoneNo));
     }
-
     private boolean checkIfAlreadyExists(String firstName, String lastName) {
         for (Contacts contact : contactList) {
             if (contact.firstName.equals(firstName) && contact.lastName.equals(lastName)) {
