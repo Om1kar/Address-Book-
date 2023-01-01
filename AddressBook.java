@@ -15,7 +15,7 @@ public class AddressBook {
     Object of addNewContacts Class
      */
     Contacts contacts = new Contacts();
-    private static ArrayList<Contacts> contactList = new ArrayList<>();
+    public static ArrayList<Contacts> contactList = new ArrayList<>();
 
     public void toDeleteContact() {
         //Get First Name to Delete the Contact
