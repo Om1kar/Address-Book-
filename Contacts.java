@@ -49,8 +49,6 @@ public class Contacts {
     public Contacts(String firstName, String lastName, String address,String city, String state, String email, String phoneNo) {
 
     }
-
-
     @Override
     public String toString() {
         return "Contacts{" +
@@ -63,6 +61,5 @@ public class Contacts {
                 "\ncity='" + city + '\'' +
                 "\nphoneNo='" + phoneNo + '\'' +
                 '}';
-
     }
 }

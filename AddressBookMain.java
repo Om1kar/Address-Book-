@@ -25,9 +25,10 @@ public class AddressBookMain {
         Scanner scanner = new Scanner(System.in);
         option = scanner.nextInt();
 
-        while (option != 8) {
+        while (option != 9) {
             System.out.println("1.Create new Address book \n2.Remove Address book"
-                    + "\n3.Print all Address book \n4. Select Address book \n5. Exit");
+                    + "\n3.Print all Address book \n4. Select Address book \n5. Search " +
+                    "\n6. Display by City \n7. Display by State \n8.Count \n9. Exit");
             option = scanner.nextInt();
             switch (option) {
                 case 1:
@@ -43,7 +44,7 @@ public class AddressBookMain {
                     selectAddressBook();
                     break;
                 case 5:
-                   search();
+                    search();
                     break;
                 case 6:
                     displayByCity();
@@ -63,15 +64,17 @@ public class AddressBookMain {
         }
 
     }
+
     private static void count() {
-        System.out.println("count by city : "+cityMap.size());
-        System.out.println("count by state : "+stateMap.size());
+        System.out.println("count by city : " + cityMap.size());
+        System.out.println("count by state : " + stateMap.size());
     }
+
     private static void displayByState() {
         addressBookList.stream().forEach((adBook) -> {
             adBook.contactList.stream().forEach(contact -> {
                 if (stateMap.containsKey(contact.state))
-                    stateMap.get(contact.state).add(contact.firstName+" "+contact.lastName);
+                    stateMap.get(contact.state).add(contact.firstName + " " + contact.lastName);
                 else {
                     List<String> state = new ArrayList<>();
                     state.add(contact.firstName + " " + contact.lastName);
@@ -82,11 +85,12 @@ public class AddressBookMain {
         System.out.println(stateMap);
 
     }
+
     private static void displayByCity() {
         addressBookList.stream().forEach((adBook) -> {
             adBook.contactList.stream().forEach(contact -> {
                 if (cityMap.containsKey(contact.city))
-                    cityMap.get(contact.city).add(contact.firstName+" "+contact.lastName);
+                    cityMap.get(contact.city).add(contact.firstName + " " + contact.lastName);
                 else {
                     List<String> city = new ArrayList<>();
                     city.add(contact.firstName + " " + contact.lastName);
@@ -102,7 +106,7 @@ public class AddressBookMain {
         System.out.println("Enter the Name of State or City");
         String searchData = scan.nextLine();
         for (AddressBook addressBook : addressBookList) {
-            addressBook.contactList.stream().filter(contacts -> contacts.state.equals(searchData)||contacts.city.equals(searchData)).forEach(contacts -> System.out.println(contacts));
+            addressBook.contactList.stream().filter(contacts -> contacts.state.equals(searchData) || contacts.city.equals(searchData)).forEach(contacts -> System.out.println(contacts));
         }
     }
 
@@ -114,9 +118,10 @@ public class AddressBookMain {
             if (m.getKey().equals(name)) {
                 addressBook = m.getValue();
                 int option = 0;
-                while (option != 5) {
+                while (option != 6) {
                     System.out.println("1.Add Contact \n2.Remove Contact"
-                            + " \n3.Edit Contact \n4.Print all Contact \n5. Back to main menu");
+                            + " \n3.Edit Contact \n4.Print all Contact \n5.Print contacts in sorted order" +
+                            " \n6.Back to main menu");
                     option = scanner.nextInt();
                     switch (option) {
                         case 1:
@@ -132,6 +137,8 @@ public class AddressBookMain {
                             addressBook.showContacts();
                             break;
                         case 5:
+                            addressBook.printSorted();
+                        case 6:
                             System.out.println("Back to main menu");
                             break;
                         default:
@@ -160,7 +167,6 @@ public class AddressBookMain {
             }
         }
     }
-
     public static void addNewAddressBook() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the name of Address Book");
@@ -169,5 +175,4 @@ public class AddressBookMain {
         addressBookList.add(addressBook);
         map.put(name, addressBook);
     }
-
 }
