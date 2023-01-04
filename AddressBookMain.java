@@ -4,15 +4,16 @@ import java.util.*;
 
 public class AddressBookMain {
     public static void main(String[] args) {
-        System.out.println("--------Welcome to Address Book Program-------");
+        System.out.println("Welcome to Address Book");
         AddressBookByRegex addressBookByRegex = new AddressBookByRegex();
         Scanner scanner = new Scanner(System.in);
         int options;
         AddressBook addressBook = new AddressBook();
         do {
-            System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5." +
-                    " Search by State\n6. Sorted List\n7. New AddressBook \n8.create file \n9.Regex \n10. Exit");
-            System.out.println("Enter Choice: ");
+            System.out.println("1. Add New Contact \n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5." +
+                    " Search by State\n6. Sorted List\n7. New AddressBook \n8. Create file" +
+                    " \n9. Regex \n10. Show CSV File \n11. Exit");
+            System.out.println("Enter Choice- ");
             options = scanner.nextInt();
 
             switch (options) {
@@ -50,7 +51,7 @@ public class AddressBookMain {
                                 System.out.println("Please Select Valid Input");
                                 break;
                         }
-                    } while (options != 0);
+                    } while (options != 2);
                     break;
                 case 5:
                     do {
@@ -125,12 +126,12 @@ public class AddressBookMain {
                     do {
                         System.out.println("-----------------------------");
                         System.out.println("Choose Options");
-                        System.out.println("1.Create File 2.Exit");
+                        System.out.println("1.Read File 2.Exit");
                         options = scanner.nextInt();
                         switch (options) {
                             case 1:
                                 AddressBook.createFile();
-
+                                AddressBook.toReadFile();
                             case 2:
                                 System.out.println("Thank you");
                                 break;
@@ -143,9 +144,10 @@ public class AddressBookMain {
                     break;
                 case 9:
                     do {
+                        System.out.println("-------------------------------");
                         System.out.println("Information By Regex");
                         System.out.println("Choose Options");
-                        System.out.println("1.Show Regex Pattern 2.Exit");
+                        System.out.println("1.Show Regex Pattern");
                         options = scanner.nextInt();
                         switch (options) {
                             case 1:
@@ -157,21 +159,35 @@ public class AddressBookMain {
                                 addressBookByRegex.validContactNo();
                                 addressBookByRegex.validCity();
                                 break;
-                            case 2:
-                                System.out.println("Exiting...");
+                            default:
+                                System.out.println("Invalid");
                                 break;
                         }
                     }
-                    while (options != 3);
+                    while (options != 2);
                     break;
                 case 10:
+                    do {
+                        System.out.println("---------------------------------------");
+                        System.out.println("Choose options 1. Show csv File");
+                        options = scanner.nextInt();
+                        switch (options) {
+                            case 1:
+                                AddressBook.toReadCsvFile("C:\\Users\\hp\\IdeaProjects\\RFP229\\src\\Address\\Contacts.csv");
+                                break;
+                            default:
+                                System.out.println("Invalid");
+                        }
+                    }
+                    while (options != 2);
+                    case 11:
                     System.out.println("Thank you for Using Address Book");
                     break;
                 default:
                     System.out.println("Please Select between 1 to 9 only.");
-                    break;
+
             }
         }
-        while (options != 10);
-    }
+            while (true) ;
+        }
 }
