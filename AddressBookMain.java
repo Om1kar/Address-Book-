@@ -131,8 +131,7 @@ public class AddressBookMain {
                             case 1:
                                 AddressBook.createFile();
                                 AddressBook.toReadFile();
-
-                            case 2:
+                                case 2:
                                 System.out.println("Thank you");
                                 break;
                             default:
@@ -174,5 +173,6 @@ public class AddressBookMain {
             }
         }
         while (options != 10);
+
     }
 }

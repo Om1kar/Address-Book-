@@ -173,7 +173,6 @@ public class AddressBook {
         }
 
     }
-
     public static void createFile() {
         try {
             File myFile = new File("C:\\Users\\hp\\IdeaProjects\\RFP229\\src\\Address\\myfile.txt");
