@@ -125,11 +125,12 @@ public class AddressBookMain {
                     do {
                         System.out.println("-----------------------------");
                         System.out.println("Choose Options");
-                        System.out.println("1.Create File 2.Exit");
+                        System.out.println("1.Read File 2.Exit");
                         options = scanner.nextInt();
                         switch (options) {
                             case 1:
                                 AddressBook.createFile();
+                                AddressBook.toReadFile();
 
                             case 2:
                                 System.out.println("Thank you");

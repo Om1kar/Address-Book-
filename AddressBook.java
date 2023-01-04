@@ -1,6 +1,7 @@
 package Address;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -175,17 +176,32 @@ public class AddressBook {
 
     public static void createFile() {
         try {
-            File myFile = new File("C:\\Users\\hp\\IdeaProjects\\RFP229\\src\\Address");
+            File myFile = new File("C:\\Users\\hp\\IdeaProjects\\RFP229\\src\\Address\\myfile.txt");
             if (myFile.createNewFile()) {
                 System.out.println("File created: " + myFile.getName());
             } else {
-                System.out.println("File already exists.");
+                System.out.println("File Exists");
             }
         } catch (IOException e) {
             System.out.println("ERROR");
             e.printStackTrace();
         }
     }
-}
+    public static void toReadFile(){
+        try {
+            File myFile = new File("C:\\Users\\hp\\IdeaProjects\\RFP229\\src\\Address\\myfile.txt");
+            Scanner myReader = new Scanner(myFile);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("ERROR");
+            e.printStackTrace();
+        }
+    }
+    }
+
 
 
