@@ -26,7 +26,8 @@ public class AddressBookMain {
                     addressBook.deleteContact();
                     break;
 
-                case 4:addressBook.displayContact();
+                case 4:
+                    addressBook.displayContact();
                     do {
                         System.out.println("---------------------------");
                         System.out.println("1. Display Contacts\n2. Display and Count by City\n3. Display and Count by State\n0. Exit");
@@ -137,36 +138,33 @@ public class AddressBookMain {
                                 System.out.println("Please Select Valid Input");
                                 break;
                         }
-                    } while (options!=3);
+                    } while (options != 3);
 
-                        break;
-
-                        /*
-               case 9:
+                    break;
+                case 9:
                     do {
                         System.out.println("Information By Regex");
                         System.out.println("Choose Options");
                         System.out.println("1.Show Regex Pattern 2.Exit");
                         options = scanner.nextInt();
-                        switch (options){
-                            case 1:addressBookByRegex.validFirstName();
-                            addressBookByRegex.validLastName();
-                            addressBookByRegex.validAddress();
-                            addressBookByRegex.validEmail();
-                            addressBookByRegex.validZip();
-                            addressBookByRegex.validContactNo();
-                            addressBookByRegex.validCity();
-                            break;
+                        switch (options) {
+                            case 1:
+                                addressBookByRegex.validFirstName();
+                                addressBookByRegex.validLastName();
+                                addressBookByRegex.validAddress();
+                                addressBookByRegex.validEmail();
+                                addressBookByRegex.validZip();
+                                addressBookByRegex.validContactNo();
+                                addressBookByRegex.validCity();
+                                break;
                             case 2:
                                 System.out.println("Exiting...");
                                 break;
                         }
                     }
-                    while (options!=3);
+                    while (options != 3);
                     break;
-
-                         */
-                        case 10:
+                case 10:
                     System.out.println("Thank you for Using Address Book");
                     break;
                 default:
