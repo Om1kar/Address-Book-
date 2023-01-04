@@ -17,6 +17,7 @@ public class AddressBookByRegex {
            System.out.println(firstName + "\nName is Valid");
        } else {
            System.out.println(firstName + " Invalid Name");
+           validFirstName();
        }
        return firstName;
    }
@@ -33,6 +34,7 @@ public class AddressBookByRegex {
             System.out.println(lastName + "\nLast Name is Valid");
         } else {
             System.out.println(lastName + " Invalid Name");
+            validLastName();
 
         }
         return lastName;
@@ -45,7 +47,7 @@ public class AddressBookByRegex {
         /*
         pattern of e-mail string => abc.xyz@bl.co.in
          */
-        String regex = "^[a-z]{3}.[a-z]{3}@[a-z]{2}.[a-z]{2}.[a-z]{2}$";
+        String regex = "^[a-z]{13}[0-9]{3}@[a-z]{5}.[a-z]{3}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
         boolean result = matcher.matches();
@@ -53,6 +55,7 @@ public class AddressBookByRegex {
             System.out.println(email + "\nE-mail is Valid");
         } else {
             System.out.println(email + " Invalid E-mail ");
+            validEmail();
 
         }
         return email;
@@ -70,6 +73,7 @@ public class AddressBookByRegex {
             System.out.println(contactNo + "\nContact No.is Valid");
         } else {
             System.out.println(contactNo + "\nInvalid Contact No.");
+            validContactNo();
 
         }
         return contactNo;
@@ -86,6 +90,7 @@ public class AddressBookByRegex {
             System.out.println(address + "\nAddress is Valid");
         } else {
             System.out.println(address + " Invalid");
+            validAddress();
 
         }
         return address;
@@ -102,6 +107,7 @@ public class AddressBookByRegex {
             System.out.println(zip + "\nValid zip code");
         } else {
             System.out.println(zip + "\nInvalid");
+            validZip();
 
         }
         return zip;
@@ -110,7 +116,7 @@ public class AddressBookByRegex {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter city ");
         String city = scanner.nextLine();
-        String regex = "^[A-Z]+[a-z]{6}$";
+        String regex = "^[A-Z]+[a-z]{5}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(city);
         boolean result = matcher.matches();
@@ -118,6 +124,7 @@ public class AddressBookByRegex {
             System.out.println(city + "\nCity Name is Valid");
         } else {
             System.out.println(city + " Invalid Name");
+            validCity();
         }
         return city;
     }

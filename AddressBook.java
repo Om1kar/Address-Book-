@@ -12,8 +12,9 @@ public class AddressBook {
     Map<String, List> map = new HashMap<>();
     ArrayList<Contacts> list = new ArrayList<>();
 
+
     public void addNewAddressBook() {
-        System.out.println("Enter AddressBook Name :");
+        System.out.println("Enter AddressBook Name -");
         String addressBook = scanner.next();
         if (map.keySet().equals(addressBook)) {
             System.out.println("Entered AddressBook is already Exist");
@@ -29,14 +30,14 @@ public class AddressBook {
     }
 
     public void checkContact() {
-        System.out.println("Enter AddressBook Name :");
+        System.out.println("Enter AddressBook Name -");
         String addName = scanner.next();
         for (String key : map.keySet()) {
             if (!addName.equalsIgnoreCase(key)) {
-                System.out.println("Address Book Not Found-----!!!");
+                System.out.println("Address Book Not Found");
             } else {
                 System.out.println("Match Found-----!!");
-                System.out.println("Enter First Name :");
+                System.out.println("Enter First Name-");
                 String firstName = scanner.next();
                 try {
                     if (!firstName.equalsIgnoreCase(contacts.getFirstName())) {
@@ -45,7 +46,7 @@ public class AddressBook {
                         System.out.println("Contact Already Exist");
                     }
                 } catch (NullPointerException e) {
-                    System.out.println("Contact Not Found------!!, Please Add First");
+                    System.out.println("Contact Not Found");
                     addNewContact();
 
                 }
@@ -173,6 +174,7 @@ public class AddressBook {
         }
 
     }
+
     public static void createFile() {
         try {
             File myFile = new File("C:\\Users\\hp\\IdeaProjects\\RFP229\\src\\Address\\myfile.txt");
@@ -186,7 +188,8 @@ public class AddressBook {
             e.printStackTrace();
         }
     }
-    public static void toReadFile(){
+
+    public static void toReadFile() {
         try {
             File myFile = new File("C:\\Users\\hp\\IdeaProjects\\RFP229\\src\\Address\\myfile.txt");
             Scanner myReader = new Scanner(myFile);
@@ -200,7 +203,21 @@ public class AddressBook {
             e.printStackTrace();
         }
     }
+
+    public static void toReadCsvFile(String filepath) {
+        try {
+           Scanner scanner  = new Scanner(new File(filepath));
+           while (scanner.hasNext()) {
+                System.out.println("Contact:- " + scanner.next().toString());
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
+}
+
+
 
 
 
