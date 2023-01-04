@@ -1,65 +1,89 @@
 package Address;
 
-import java.util.Scanner;
-
 public class Contacts {
-    public String firstName;
-    public String lastName;
-    public String address;
-    public String state;
-    public int zip;
-    public long phoneNo;
-    public String email;
-    public String city;
+    private String firstName;
+    private String lastName;
+    private String Address;
+    private String city;
+    private String state;
+    private String Pin;
+    private String phoneNumber;
+    private String email;
 
-    Contacts() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Creating New Contact");
-        System.out.println("Enter Details");
-        System.out.println("Enter First Name-");
-        this.firstName = scanner.nextLine();
-        System.out.println("Enter Last Name");
-        this.lastName = scanner.nextLine();
-        System.out.println("Enter Your Address-");
-        this.address = scanner.nextLine();
-        System.out.println("Enter State-");
-        this.state = scanner.nextLine();
-        System.out.println("Enter Zip Code-");
-        this.zip = scanner.nextInt();
-        System.out.println("Enter Phone Number-");
-        this.phoneNo = scanner.nextLong();
-        System.out.println("Enter e-m@il-");
-        this.email = scanner.nextLine();
-        System.out.println("Enter City");
-        this.city = scanner.nextLine();
-
+    public String getFirstName() {
+        return firstName;
     }
 
-    public Contacts(String firstName, String lastName, String address, String state, int zip, long phoneNo, String email) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
         this.lastName = lastName;
-        this.address = address;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
         this.state = state;
-        this.zip = zip;
-        this.phoneNo = phoneNo;
+    }
+
+    public String getPin() {
+        return Pin;
+    }
+
+    public void setPin(String pin) {
+        Pin = pin;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public Contacts(String firstName, String lastName, String address,String city, String state, String email, String phoneNo) {
-
-    }
     @Override
     public String toString() {
-        return "Contacts{" +
-                "\nfirstName='" + firstName + '\'' +
-                "\nlastName='" + lastName + '\'' +
-                "\naddress='" + address + '\'' +
-                "\ncity='" + zip + '\'' +
-                "\nstate='" + state + '\'' +
-                "\nemail='" + email + '\'' +
-                "\ncity='" + city + '\'' +
-                "\nphoneNo='" + phoneNo + '\'' +
-                '}';
+        return "Contacts Details :--" +"\n"+
+                "Firstname : " + firstName +"\n"+
+                "Lastname : " + lastName + '\n'+
+                "Address : " + Address + '\n' +
+                "City : " + city + '\n' +
+                "State : " + state + '\n' +
+                "Pin : " + Pin +'\n'+
+                "PhoneNumber : " + phoneNumber +'\n'+
+                "Email : " + email +'\n';
     }
 }
